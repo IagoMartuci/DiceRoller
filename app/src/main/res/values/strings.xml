@@ -2,5 +2,5 @@
     <string name="app_name">DiceRoller</string>
     <string name="result">Result</string>
     <string name="roll">Roll</string>
-    <string name="sides">Sides of the dice</string>
+    <string name="sides">Number of sides</string>
 </resources>
