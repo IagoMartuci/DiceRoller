@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.diceroller.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
@@ -21,8 +22,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice(){
-        val randonInt = (1..6).random()
+        val numSides = binding.Sides.text.toString().toInt()
+        val randonInt = (1..numSides).random()
         val resultText = randonInt
+
+        val toastMsg = Toast.makeText(this, "Rolou um Dado!", Toast.LENGTH_SHORT)
+        toastMsg.show()
+
         binding.Result.text = resultText.toString()
     }
 }
