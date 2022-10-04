@@ -22,13 +22,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice(){
-        val numSides = binding.Sides.text.toString().toInt()
-        val randonInt = (1..numSides).random()
-        val resultText = randonInt
+
+        //Se o EditText estiver vazio ele faz o bloco if:
+        if (binding.Sides.text.toString().isEmpty())
+        {
+            val randonInt = (1..6).random()
+            val resultText = randonInt
+            binding.Result.text = resultText.toString()
+        }
+        //Senão ele faz o bloco else:
+        else
+        {
+            val numSides = binding.Sides.text.toString().toInt()
+            val randonInt = (1..numSides).random()
+            val resultText = randonInt
+            binding.Result.text = resultText.toString()
+        }
 
         val toastMsg = Toast.makeText(this, "Rolou um Dado!", Toast.LENGTH_SHORT)
         toastMsg.show()
-
-        binding.Result.text = resultText.toString()
     }
 }
